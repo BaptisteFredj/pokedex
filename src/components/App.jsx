@@ -1,7 +1,9 @@
+import MyTitle from "./MyTitle";
+
 function App() {
   return (
     <div>
-      <h1>Hello React</h1>
+      <MyTitle />
     </div>
   );
 }
