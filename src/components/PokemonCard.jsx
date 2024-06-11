@@ -1,10 +1,13 @@
 function PokemonCard() {
-  const pokemon = pokemonList[0];
+  const pokemon = pokemonList[1];
+
   return (
-    <figure>
-      <img src={pokemon.imgSrc} />
-      <figcaption>{pokemon.name}</figcaption>
-    </figure>
+    <>
+      <figure>
+        {pokemon.imgSrc ? <img src={pokemon.imgSrc} /> : <p>???</p>}
+        <figcaption>{pokemon.name}</figcaption>
+      </figure>
+    </>
   );
 }
 
@@ -20,6 +23,3 @@ const pokemonList = [
     name: "mew",
   },
 ];
-
-// Reprendre cette ligne pour exo 4 https://odyssey.wildcodeschool.com/quests/2336
-// return <p>{weather === "sunny" ? "☀️" : "☁️"}</p>;
