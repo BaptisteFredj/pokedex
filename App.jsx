@@ -1,5 +1,5 @@
-import MyTitle from "./MyTitle";
-import PokemonCard from "./PokemonCard";
+import MyTitle from "./src/components/MyTitle";
+import PokemonCard from "./src/components/PokemonCard";
 
 function App() {
   return (
