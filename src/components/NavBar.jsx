@@ -1,26 +1,21 @@
 import PropTypes from "prop-types";
 
-export default function Navigate({
-  setPokemonIndex,
-  pokemonList,
-  pokemonIndex,
-}) {
-  const HandleClickPrevious = () => setPokemonIndex(pokemonIndex - 1);
-  const HandleClickNext = () => setPokemonIndex(pokemonIndex + 1);
+export default function Navigate({ setPokemonIndex, pokemonList }) {
+  const HandleClickPkmn = (index) => () => setPokemonIndex(index);
+
   return (
     <>
-      {pokemonIndex > 0 ? (
-        <button onClick={HandleClickPrevious}>Précédent</button>
-      ) : null}
-      {pokemonIndex < pokemonList.length - 1 ? (
-        <button onClick={HandleClickNext}>Suivant</button>
-      ) : null}
+      {pokemonList.map((pokemon, index) => (
+        <button onClick={HandleClickPkmn(index)} key={pokemon.name}>
+          {pokemon.name}
+        </button>
+      ))}
     </>
   );
 }
 
 Navigate.propTypes = {
-  setPokemonIndex: PropTypes.func,
+  setPokemonIndex: PropTypes.func.isRequired,
   pokemonIndex: PropTypes.number.isRequired,
   pokemonList: PropTypes.array.isRequired,
 };
